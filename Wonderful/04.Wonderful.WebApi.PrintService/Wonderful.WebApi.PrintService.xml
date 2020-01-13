@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wonderful.WebApi.PrintService</name>
+    </assembly>
+    <members>
+        <member name="T:Wonderful.WebApi.PrintService.Controllers.PrintServiceController">
+            <summary>
+            打印服务控制器
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.PrintServiceController.#ctor(Wonderful.WebApi.PrintService.Models.TodoContext,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.PrintServiceController.PostPrint(Wonderful.WebApi.PrintService.Models.PrintRequest)">
+            <summary>
+            请求打印
+            </summary>
+            <param name="printRequest">请求打印请求</param>
+            <returns>请求打印结果</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.PrintServiceController.PostExecutePrint(Wonderful.WebApi.PrintService.Models.ExecutePrintRequest)">
+            <summary>
+            执行打印
+            </summary>
+            <param name="executePrintRequest">执行打印请求</param>
+            <returns>执行打印响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.PrintServiceController.PostPrintTask(Wonderful.WebApi.PrintService.Models.PrintTaskRequest)">
+            <summary>
+            执行打印任务
+            </summary>
+            <param name="printTaskRequest">执行打印任务请求</param>
+            <returns>执行打印任务响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.PrintServiceController.GetTodoItems">
+            <summary>
+            获得代办列表
+            GET: api/printservice
+            </summary>
+            <returns>待办列表</returns>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper">
+            <summary>
+            内部静态类，提供路径转换公用函数
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.getPath(System.String)">
+            <summary>
+            获得以"\"结尾的路径
+            </summary>
+            <param name="path">路径</param>
+            <returns>以"\"结尾的路径</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.getNameSubStrings(System.String)">
+            <summary>
+            获得NameSubString，去掉最后回车换行
+            </summary>
+            <param name="nameSubStrings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.GeneratePrintTask(Wonderful.WebApi.PrintService.Models.PrintTaskRequest,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            生成打印任务
+            </summary>
+            <param name="printTaskRequest">打印任务请求</param>
+            <param name="TaskId">任务Id</param>
+            <param name="CurrentDirectory">当前路径</param>
+            <param name="TemplateFolder">模板文件夹名</param>
+            <param name="OutputFolder">输出文件夹名</param>
+            <param name="FileName">文件名</param>
+            <param name="BartendExePath">Bartender执行路径</param>
+            <param name="PrintName">打印机名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.PreLoadBartender(Wonderful.WebApi.PrintService.Models.ExecutePrintRequest,System.String,System.String,System.String)">
+            <summary>
+            预加载Bartender
+            </summary>
+            <param name="executePrintRequest">执行打印请求</param>
+            <param name="CurrentDirectory">当前路径</param>
+            <param name="TemplateFolder">模板文件夹名</param>
+            <param name="BartendExePath">Bartender执行路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.ExportPrintPreviewToImage(Wonderful.WebApi.PrintService.Models.ExecutePrintRequest,System.String,System.String)">
+            <summary>
+            生成打印任务图片结果
+            </summary>
+            <param name="executePrintRequest">执行打印请求</param>
+            <param name="CurrentDirectory">当前路径</param>
+            <param name="TemplateFolder">模板文件夹名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Controllers.CommonConvertHelper.ExportPrintPreviewToImage(Wonderful.WebApi.PrintService.Models.PrintTaskRequest,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            生成打印任务图片结果
+            </summary>
+            <param name="printTaskRequest">打印任务请求</param>
+            <param name="TaskId">任务Id</param>
+            <param name="CurrentDirectory">当前路径</param>
+            <param name="TemplateFolder">模板文件夹名</param>
+            <param name="FileName">文件名</param>
+            <param name="BartendExePath">Bartender执行路径</param>
+            <param name="PrintName">打印机名</param>
+            <returns></returns>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.ExcelTaskContent">
+            <summary>
+            Excel打印任务需要的内容
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExcelTaskContent.SheetName">
+            <summary>
+            工作表名称
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExcelTaskContent.CellContent">
+            <summary>
+            单元格内容
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExcelTaskContent.TableContent">
+            <summary>
+            表格内容
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest">
+            <summary>
+            执行打印
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest.TaskId">
+            <summary>
+            打印任务Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest.FileName">
+            <summary>
+            打印文件名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest.PrintName">
+            <summary>
+            打印机名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest.PrintType">
+            <summary>
+            打印类型（Bartend、Excel）
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintRequest.PrintCount">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse">
+            <summary>
+            执行打印结果
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.TaskId">
+            <summary>
+            打印任务Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.FileName">
+            <summary>
+            打印文件名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.PrintName">
+            <summary>
+            打印机名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.PrintType">
+            <summary>
+            打印类型（Bartend、Excel）
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.PrintCount">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.Result">
+            <summary>
+            执行打印的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.ExecutePrintResponse.Msg">
+            <summary>
+            执行打印的结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.NamedSubString">
+            <summary>
+            替代字符串
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.NamedSubString.Name">
+            <summary>
+            替代字符串名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.NamedSubString.Value">
+            <summary>
+            替代字符串值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.PrintRequest">
+            <summary>
+            请求打印
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintRequest.TokenId">
+            <summary>
+            请求打印的用户的TokenId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.PrintResponse">
+            <summary>
+            请求打印结果
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintResponse.TokenId">
+            <summary>
+            请求打印用户的TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintResponse.Result">
+            <summary>
+            请求打印的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintResponse.Msg">
+            <summary>
+            请求打印的结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintResponse.TaskId">
+            <summary>
+            打印任务Id
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.PrintTaskRequest">
+            <summary>
+            条码打印任务
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.TaskId">
+            <summary>
+            打印任务Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.FileName">
+            <summary>
+            打印文件名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.PrintName">
+            <summary>
+            打印机名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.PrintType">
+            <summary>
+            打印类型（Bartend、Excel）
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.PrintCount">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.TaskContent">
+            <summary>
+            打印任务需要替换字符串
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.ExcelTaskContent">
+            <summary>
+            Excel打印任务需要的内容
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskRequest.PrintNext">
+            <summary>
+            是否打印下一个标签，True-是，False-否
+            如果需要打印下一个标签，不关闭预加载模板
+            如果不需要打印下一个标签，关闭预加载模板
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.PrintTaskResponse">
+            <summary>
+            条码打印任务结果
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskResponse.TaskId">
+            <summary>
+            打印任务Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskResponse.Result">
+            <summary>
+            执行打印的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.PrintTaskResponse.Msg">
+            <summary>
+            执行打印的结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Models.TodoContext">
+            <summary>
+            待处理项目上下文
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Models.TodoContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Wonderful.WebApi.PrintService.Models.TodoContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Models.TodoContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoContext.TodoItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.TokenId">
+            <summary>
+            TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.FileName">
+            <summary>
+            模板文件名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.PrintName">
+            <summary>
+            打印机名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.PrintType">
+            <summary>
+            打印类型（Bartend、Excel）
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.PrintCount">
+            <summary>
+            打印数量
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.CurrentDirectory">
+            <summary>
+            当前路径
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.TemplateFolder">
+            <summary>
+            模板文件夹
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.BartendExePath">
+            <summary>
+            Bartend可执行文件路径
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Models.TodoItem.IsComplete">
+            <summary>
+            是否完成，True-完成，False-未完成
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wonderful.WebApi.PrintService.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Wonderful.WebApi.PrintService.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.PrintService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-do Print</title>
+    <style>
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="print()">Print in server side</button>
+    <div class="pdf"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="jquery.media.js"></script>
+    <script type="text/javascript">
+        const uri = "api/printservice";
+
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg); //匹配目标参数	
+            if (r != null) return unescape(r[2]);
+            return null; //返回参数值
+        }
+
+        $(function () {
+            $(".pdf").media({ width: "100%", height: "610px", autoplay: true, src: getUrlParam("pdf") });
+        });
+
+    function print() {
+            const printTaskRequest = {
+                "TaskId": getUrlParam("taskid"),
+            };
+            $.ajax({
+                async: false,
+                type: "POST",
+                accepts: "application/json",
+                contentType: "application/json",
+                url: uri + "/PrintTaskExcel",
+                data: JSON.stringify(printTaskRequest),
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("PrintTask Fail!");
+                },
+                success: function (result) {
+                    if (result.result) {
+                        alert("PrintTask Success!");
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

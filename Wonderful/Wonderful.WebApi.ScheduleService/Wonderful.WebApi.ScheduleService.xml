@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wonderful.WebApi.ScheduleService</name>
+    </assembly>
+    <members>
+        <member name="T:Wonderful.WebApi.ScheduleService.Controllers.AmwayScheduleController">
+            <summary>
+            计划任务API
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.ScheduleService.Controllers.AmwayScheduleController.ExecuteTask(Wonderful.WebApi.ScheduleService.Models.Requests.ExecuteTaskRequest)">
+            <summary>
+            执行计划任务API
+            </summary>
+            <param name="request">请求</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScheduleService.Controllers.AmwayScheduleController.UpdateSchedule(Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest)">
+            <summary>
+            更新计划任务API
+            </summary>
+            <param name="request">请求</param>
+            <returns></returns>
+        </member>
+        <member name="F:Wonderful.WebApi.ScheduleService.Enums.EnumRecordStatus.Disabled">
+            <summary>
+            无效
+            </summary>
+        </member>
+        <member name="F:Wonderful.WebApi.ScheduleService.Enums.EnumRecordStatus.Enabled">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="F:Wonderful.WebApi.ScheduleService.Enums.EnumRecordStatus.Deleted">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.ExecuteTaskRequest.ScheduleCode">
+            <summary>
+            任务code
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.ExecuteTaskRequest.SystemCode">
+            <summary>
+            系统code
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.ScheduleId">
+            <summary>
+            任务id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.ScheduleCode">
+            <summary>
+            任务code
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.SystemCode">
+            <summary>
+            系统code
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.Descr">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.StartDate">
+            <summary>
+            任务起始时间
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.EndDate">
+            <summary>
+            任务结束时间
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.Period">
+            <summary>
+            执行周期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.RetryCount">
+            <summary>
+            重试次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScheduleService.Models.Requests.UpdateScheduleRequest.ScheduleStatus">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+    </members>
+</doc>

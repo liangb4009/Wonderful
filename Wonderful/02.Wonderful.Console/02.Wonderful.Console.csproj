@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>Wonderful.Console</RootNamespace>
+    <AssemblyName>Wonderful.Console</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\01.Wonderful.Util\01.Wonderful.Util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PIMTemplate\NU-ontest.btw">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="PIMTemplate\zaokuai.btw">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="PIMTemplate\zaokuai.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

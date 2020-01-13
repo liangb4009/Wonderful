@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-do Print</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+    <h1>To-do Print</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="print()">
+        FileName:
+        <input type="radio" name="filename" value="ontest" checked="checked">ontest<br>
+        PrintName:
+        <input type="radio" name="printname" value="HPC Floor1 Zebra" checked="checked">HPC Floor1 Zebra
+        <input type="radio" name="printname" value="HPC Floor1 A4">HPC Floor1 A4<br>
+        PrintType:
+        <input type="radio" name="printtype" value="Bartend" checked="checked">Bartend
+        <input type="radio" name="printtype" value="Excel">Excel<br>
+        PrintCount:<input type="number" name="printcount" value="1" required /><br>
+        FileContent:
+        <div id="filecontent">
+            Reason:<input type="text" name="reason" value="" placeholder="瑕疵原因" required /><br>
+            Name:<input type="text" name="name" value="" placeholder="材料名称" required /><br>
+            ItemNo:<input type="text" name="itemno" value="" placeholder="材料编号" required />
+            Qty:<input type="number" name="qty" value="" placeholder="数量" required /><br>
+            Wo:<input type="text" name="wo" value="" placeholder="WO号" required />
+            Uom:<input type="text" name="uom" value="" placeholder="单位" required /><br>
+            LotNum:<input type="text" name="lotnum" value="" placeholder="安利批号" required /><br>
+            RecordBy:<input type="text" name="recordby" value="" placeholder="记录人" required />
+            RecordDate:<input type="text" name="recorddate" value="" placeholder="日期" required /><br>
+        </div>
+        <input type="submit" value="Print">
+    </form>
+
+    <p id="counter"></p>
+
+    <table style="float:left;">
+        <tr>
+            <th>Is Complete</th>
+            <th>TaskId</th>
+            <th>FileName</th>
+            <th>PrintName</th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+    <table>
+        <tr>
+            <th>Image</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>
+                    <img id="imgPrev" src="PIMTemplate/blank.jpg" width="100%" align="middle">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js?v=2"></script>
+</body>
+</html>

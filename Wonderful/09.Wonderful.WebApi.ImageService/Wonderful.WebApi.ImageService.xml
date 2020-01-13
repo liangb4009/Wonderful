@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wonderful.WebApi.ImageService</name>
+    </assembly>
+    <members>
+        <member name="T:Wonderful.WebApi.ImageService.Controllers.ImagePageServiceController">
+            <summary>
+            拍照页面服务
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImagePageServiceController.ImageCaptureTaskPage">
+            <summary>
+            请求拍照任务页面
+            </summary>
+            <returns>拍照任务页面</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImagePageServiceController.ImageCapturePage(Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest)">
+            <summary>
+            请求拍照页面
+            </summary>
+            <returns>拍照页面</returns>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Controllers.ImageServiceController">
+            <summary>
+            拍照服务
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.#ctor(Wonderful.WebApi.ImageService.Models.TodoContext,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            构造函数，默认增加一条初始化任务
+            </summary>
+            <param name="context"></param>
+            <param name="hostingEnvironment"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.PostImageCapture(Wonderful.WebApi.ImageService.Models.ImageCaptureRequest)">
+            <summary>
+            请求拍照
+            </summary>
+            <param name="imageCaptureRequest">拍照请求</param>
+            <returns>拍照响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.PostImageSaveCaptureTask(Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest)">
+            <summary>
+            请求保存拍照任务
+            </summary>
+            <param name="imageSaveCaptureTaskRequest">保存拍照任务请求</param>
+            <returns>保存拍照任务响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.PostImageSaveCaptureValue(Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueRequest)">
+            <summary>
+            保存当前摄像头图像
+            </summary>
+            <param name="imageSaveCaptureValueRequest">保存当前摄像头图像请求</param>
+            <returns>保存当前摄像头图像响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.PostTodoItems">
+            <summary>
+            获得所有待办项目
+            </summary>
+            <returns>所有待办项目</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Controllers.ImageServiceController.PostTodoItem(Wonderful.WebApi.ImageService.Models.TodoItemRequest)">
+            <summary>
+            获得一个待办项目
+            </summary>
+            <param name="request">待办项目请求</param>
+            <returns>待办项目</returns>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest">
+            <summary>
+            图像拍照页面请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.RunMode">
+            <summary>
+            运行模型，分拍照(takephoto)，扫描条码(scanqrcode)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.CameraType">
+            <summary>
+            摄像头类型，分前置(front camera)，后置(back camera)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.MachineName">
+            <summary>
+            安装摄像头机器名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.CaptureCount">
+            <summary>
+            拍照次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.CaptureFrequency">
+            <summary>
+            拍照频率，单位秒
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCapturePageRequest.ImageValues">
+            <summary>
+            图像值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageCaptureRequest">
+            <summary>
+            拍照请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCaptureRequest.TokenId">
+            <summary>
+            请求拍照的用户Id
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageCaptureResponse">
+            <summary>
+            拍照响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCaptureResponse.TokenId">
+            <summary>
+            请求拍照用户的TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCaptureResponse.Result">
+            <summary>
+            请求拍照的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCaptureResponse.Msg">
+            <summary>
+            请求拍照的结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageCaptureResponse.TaskId">
+            <summary>
+            拍照任务Id
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest">
+            <summary>
+            保存拍照任务请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.RunMode">
+            <summary>
+            运行模型，分拍照(takephoto)、扫描条码(scanqrcode)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.CameraType">
+            <summary>
+            摄像头类型，分前置(front camera)、后置(back camera)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.MachineName">
+            <summary>
+            安装摄像头的电脑名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.CaptureCount">
+            <summary>
+            拍照次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskRequest.CaptureFrequency">
+            <summary>
+            拍照频率
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskResponse">
+            <summary>
+            保存拍照任务响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskResponse.Msg">
+            <summary>
+            保存拍照任务响应，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureTaskResponse.Result">
+            <summary>
+            保存拍照任务结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueRequest">
+            <summary>
+            保存当前摄像头图像请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueRequest.ImageValue">
+            <summary>
+            图像值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueResponse">
+            <summary>
+            保存当前摄像头图像响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueResponse.Msg">
+            <summary>
+            保存图像结果消息，成功显示"Success to save value"，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageSaveCaptureValueResponse.Result">
+            <summary>
+            保存图像结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageValue">
+            <summary>
+            图像值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValue.TodoItem">
+            <summary>
+            TodoItem
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageValueRequest">
+            <summary>
+            图像值请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueRequest.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueRequest.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueRequest.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueRequest.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.ImageValueResponse">
+            <summary>
+            图像值响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueResponse.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueResponse.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueResponse.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueResponse.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.ImageValueResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.TodoContext">
+            <summary>
+            待处理项目上下文
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Models.TodoContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Wonderful.WebApi.ImageService.Models.TodoContext})">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:Wonderful.WebApi.ImageService.Models.TodoContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoContext.TodoItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoContext.ImageValues">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.TodoItem">
+            <summary>
+            待处理项目
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.TokenId">
+            <summary>
+            TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.RunMode">
+            <summary>
+            运行模式，拍照(takephoto)、扫描二维码(scanqrcode)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.CameraType">
+            <summary>
+            摄像头类型，分前置(front camera)、后置(back camera)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.MachineName">
+            <summary>
+            安装摄像头的电脑名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.CaptureCount">
+            <summary>
+            拍照次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.CaptureFrequency">
+            <summary>
+            拍照频率，单位秒
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.ImageValues">
+            <summary>
+            图像值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItem.IsComplete">
+            <summary>
+            是否完成，True-完成，False-未完成
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.TodoItemRequest">
+            <summary>
+            待办项目请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ImageService.Models.TodoItemResponse">
+            <summary>
+            待办项目响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.TokenId">
+            <summary>
+            TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.RunMode">
+            <summary>
+            运行模型，分拍照(takephoto)、扫描条码(scanqrcode)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.CameraType">
+            <summary>
+            摄像头类型，分前置(front camera)、后置(back camera)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.MachineName">
+            <summary>
+            安装摄像头的电脑名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.CaptureCount">
+            <summary>
+            拍照次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.CaptureFrequency">
+            <summary>
+            拍照频率，单位秒
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.ImageValues">
+            <summary>
+            图像值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ImageService.Models.TodoItemResponse.IsCompleted">
+            <summary>
+            是否完成，True-完成，False-未完成
+            </summary>
+        </member>
+        <member name="T:_09.Wonderful.WebApi.ImageService.GlobalExceptionFilter">
+            <summary>
+            全局异常过滤
+            </summary>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.GlobalExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:_09.Wonderful.WebApi.ImageService.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:_09.Wonderful.WebApi.ImageService.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:_09.Wonderful.WebApi.ImageService.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:_09.Wonderful.WebApi.ImageService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

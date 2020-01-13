@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wonderful.WebApi.HautosProductService</name>
+    </assembly>
+    <members>
+        <member name="M:Wonderful.WebApi.HautosProductService.Controllers.HautosProductController.LogTemperatureAndHumidityList(System.Collections.Generic.List{Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel})">
+            <summary>
+            批量记录温湿度数据
+            </summary>
+            <param name="dataList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.EnumConnectStatus">
+            <summary>
+            连接状态的枚举类型
+            </summary>
+        </member>
+        <member name="F:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.EnumConnectStatus.Disconnected">
+            <summary>
+            断开
+            </summary>
+        </member>
+        <member name="F:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.EnumConnectStatus.Connected">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH">
+            <summary>
+            温湿度设备信息
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.EQUIPMENT_ID">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.DeviceArea">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.DeviceSerialNumber">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HygrothermographAddress">
+            <summary>
+            设备地址
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HygrothermographName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HygrothermographPort">
+            <summary>
+            设备端口
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HygrothermographType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.GetRate">
+            <summary>
+            采集频率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.TempratureUper">
+            <summary>
+            温度上限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.TempratureLower">
+            <summary>
+            温度下限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HumidityUper">
+             <summary>
+            湿度上限
+             </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.HumidityLower">
+            <summary>
+            湿度下限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.ConnectStatus">
+            <summary>
+            连接状态
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.Status">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.UpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.RecordStatus">
+            <summary>
+            数据状态
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.MSTB_COM_HUMITURE_HYGROTHERMOGRAPH.RecordLastEditDt">
+            <summary>
+            记录更新时间
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA">
+            <summary>
+            温湿度数据
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.EQUIPMENT_ID">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.DATE_TIME">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.TEMPERATURE">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.HUMIDITY">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.RecordStatus">
+            <summary>
+            数据状态
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.HautosProduct.Entity.TSTB_QUA_HUMITURE_DATA.RoomInfo">
+            <summary>
+            房间信息
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel">
+            <summary>
+            华图温湿度设备
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.DeviceArea">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.EQUIPMENT_ID">
+            <summary>
+            设备id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.DeviceSerialNumber">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HygrothermographAddress">
+            <summary>
+            设备地址
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HygrothermographName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HygrothermographPort">
+            <summary>
+            设备端口
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HygrothermographType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.GetRate">
+            <summary>
+            采集频率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.TempratureUper">
+            <summary>
+            温度上限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.TempratureLower">
+            <summary>
+            温度下限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.TempratureUpLowerStr">
+            <summary>
+            温度上下限描述
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HumidityUper">
+            <summary>
+            湿度上限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HumidityLower">
+            <summary>
+            湿度下限
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.HumidityUperLowerStr">
+            <summary>
+            湿度上下限描述
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.ConnectStatus">
+            <summary>
+            连接状态
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.ConnectStatusValue">
+            <summary>
+            连接状态value
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel.Status">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest">
+            <summary>
+            获取设备列表请求
+            </summary>
+        </member>
+        <member name="M:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.#ctor">
+            <summary>
+            设备列表请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.deviceSerialNumber">
+            <summary>
+            设备编号
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.deviceName">
+            <summary>
+            设备名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.deviceType">
+            <summary>
+            设备类型
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.eqid">
+            <summary>
+            设备Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.page">
+            <summary>
+            设备列表页数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest.pageSize">
+            <summary>
+            设备列表每页设备数
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel">
+            <summary>
+            温湿度数据
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.ID">
+            <summary>
+            记录唯一ID
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.EQUIPMENT_ID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.DATE_TIME">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.TEMPERATURE">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.HUMIDITY">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel.RoomInfo">
+            <summary>
+            房间信息
+            </summary>
+        </member>
+        <member name="T:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController">
+            <summary>
+            温湿度计服务
+            </summary>
+        </member>
+        <member name="M:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController.GetHautoDeviceList(Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest)">
+            <summary>
+            获取设备列表
+            </summary>
+            <param name="request">获取设备列表请求</param>
+            <returns>华图温湿度设备</returns>
+        </member>
+        <member name="M:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController.GetDeviceDetail(Wonderful.WebApi.HautosProductService.Models.Requests.GetDeviceListRequest)">
+            <summary>
+            根据设备id获取设备信息
+            </summary>
+            <param name="eqid">设备id</param>
+            <returns>找到返回True，华图温湿度设备信息；没找到返回False，错误信息“未找到相关设备！”</returns>      
+        </member>
+        <member name="M:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController.SaveHautoDevice(Wonderful.WebApi.HautosProductService.Models.MSTB_COM_HUMITURE_HYGROTHERMOGRAPHModel)">
+            <summary>
+            保存设备信息
+            </summary>
+            <param name="deviceInfo">华图温湿度设备</param>
+            <returns>保存成功，返回Success为True，ErrorMsg为空；保存失败，返回Success为True，ErrorMsg为空，ErrorDetailMsg返回错误信息</returns>
+        </member>
+        <member name="M:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController.LogTemperatureAndHumidityList(System.Collections.Generic.List{Wonderful.WebApi.HautosProductService.Models.TSTB_QUA_HUMITURE_DATAModel})">
+            <summary>
+            批量记录温湿度数据
+            </summary>
+            <param name="dataList">温湿度数据</param>
+            <returns>保存成功，返回Success为True</returns>
+        </member>
+        <member name="M:_13.Wonderful.WebApi.HautosProductService.Controllers.HautosProductServiceController.GetTemperatureAndHumidityList(System.String,System.String)">
+            <summary>
+            获取温湿度数据记录
+            </summary>
+            <param name="begintime">开始时间</param>
+            <param name="endtime">结束时间</param>
+            <returns>温湿度数据列表，Success为True</returns>
+        </member>
+    </members>
+</doc>

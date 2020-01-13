@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XMLScript Version="2.0">
+  <Command Name="Job1">
+    <Print>
+      <Format>D:\workspace\Project_Code\Wonderful\Wonderful\02.Wonderful.Console\bin\Debug\netcoreapp2.2\PIMTemplate\zaokuai.btw</Format>
+      <NamedSubString Name="No1">
+        <Value>1</Value>
+      </NamedSubString>
+      <NamedSubString Name="No2">
+        <Value>2</Value>
+      </NamedSubString>
+      <NamedSubString Name="No3">
+        <Value>3</Value>
+      </NamedSubString>
+    </Print>
+    <ExportPrintPreviewToImage ReturnImageInResponse="true">
+      <Format>D:\workspace\Project_Code\Wonderful\Wonderful\02.Wonderful.Console\bin\Debug\netcoreapp2.2\PIMTemplate\zaokuai.btw</Format>
+      <Folder>D:\workspace\Project_Code\Wonderful\Wonderful\02.Wonderful.Console\bin\Debug\netcoreapp2.2\PIMTemplate\</Folder>
+      <FileNameTemplate>Preview_Label%PageNumber%.jpg</FileNameTemplate>
+      <ImageFormatType>JPG</ImageFormatType>
+      <Colors>btColors24Bit</Colors>
+      <DPI>300</DPI>
+      <Overwrite>true</Overwrite>
+      <IncludeMargins>true</IncludeMargins>
+      <IncludeBorder>true</IncludeBorder>
+      <BackgroundColor>16777215</BackgroundColor>
+    </ExportPrintPreviewToImage>   
+  </Command>
+</XMLScript>

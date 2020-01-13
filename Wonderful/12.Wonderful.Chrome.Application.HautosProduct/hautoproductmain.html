@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html style="overflow:scroll;">
+<head>
+    <meta charset="utf-8" />
+
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/PageJs/HautoProductNew.js"></script>
+    <link href="css/hatuproductmain.css" rel="stylesheet" />
+    <script src="scripts/Echart-3.7/echarts.js"></script>
+    <title></title>
+</head>
+<body>
+
+    <div id="title_bar">
+        <a id="close" href="#"><img src="/images/close.ico" style="vertical-align:bottom" /></a>
+        <a id="maximize" href="#"><img src="/images/maximize.ico" style="vertical-align:bottom" /></a>
+        <a id="minimize" href="#"><img src="/images/minus.ico" style="vertical-align:bottom" /></a>
+    </div>
+    <h1>温湿度计监控</h1>
+    <div>
+
+        <input class="btn" type="button" value="上传到数据库" />
+        <input class="btn" type="button" value="从设备下载" id="opendownload" />
+        <input class="btn" type="button" value="打开连接" id="btnconnectserver" />
+        <input class="btn" type="button" value="断开连接" id="btndisconnectserver" />
+
+        <span id="errormsg" style="display:none;color:red;"></span>
+    </div>
+    <div class="divbar">
+
+    </div>
+    <div style="float:left;">
+        <input type="hidden" id="hideqid" />
+        <table class="tb">
+
+            <tr>
+                <td colspan="2">设备信息</td>
+            </tr>
+
+            <tr>
+                <td>设备ID：</td>
+                <td id="eqid"></td>
+            </tr>
+            <tr>
+                <td>设备名称：</td>
+                <td id="eqname"></td>
+            </tr>
+            <tr>
+                <td>设备编号：</td>
+                <td id="eqserianumber"></td>
+            </tr>
+            <tr>
+                <td>类型：</td>
+                <td id="eqtype"></td>
+            </tr>
+            <tr>
+                <td>设备IP：</td>
+                <td id="eqaddress"></td>
+            </tr>
+            <tr>
+                <td>设备端口号：</td>
+                <td id="eqport"></td>
+            </tr>
+            <tr>
+                <td>采集频率：</td>
+                <td id="eqgetrate"></td>
+            </tr>
+            <tr>
+                <td>温度上下限：</td>
+                <td id="eqtupdown"></td>
+            </tr>
+            <tr>
+                <td>湿度上下限：</td>
+                <td id="eqhupdown"></td>
+            </tr>
+            <tr>
+                <td>区域：</td>
+                <td id="eqarea"></td>
+            </tr>
+            <tr>
+                <td>监控间：</td>
+                <td id="eqremark"></td>
+            </tr>
+        </table>
+
+
+    </div>
+
+
+    <div style="float:left;padding-left:100px;height:550px;overflow-y:scroll;">
+
+        <table class="tb">
+            <thead id="hatudatath">
+                <tr>
+                    <td>采集时间</td>
+                    <td>温度</td>
+                    <td>湿度</td>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+
+
+    <div id="HygrometerEchart" style="float:left;padding-left:100px; width:800px;height:500px;">
+
+    </div>
+    <div id="popLayer"></div>
+    <div id="popBox" style="top:0;left:0;">
+        <div class="close" id="titleBar">
+            <a id="closedownload" href="#"><img src="/images/close.ico" /></a>
+        </div>
+        <div class="content">
+            <div class="contentbox">
+                <table>
+                    <tr>
+                        <td> <label>开始时间</label></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td> <label>结束时间</label></td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input class="btn" type="button" value="下载" id="btnconfirmdownload" />
+                            <input class="btn" type="button" value="取消" id="btncanceldownload" />
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+          
+           
+        </div>
+    </div>
+    
+</body>
+</html>

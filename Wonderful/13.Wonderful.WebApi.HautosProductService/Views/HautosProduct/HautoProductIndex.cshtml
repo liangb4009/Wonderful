@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>华图温湿度设备列表</title>
+    <script src="~/js/jquery-1.9.1.min.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        function openHautoProducts() {
+            //01-window发送消息showhautoproduct
+            parent.window.postMessage({
+                "message": "hautoproductoperate",
+                "taskid": "aaaaaaaa" + "1",
+                "appname": "Web Thermo-Hygrometer Application",
+                "DeviceSerialNumber": "HS500BS713",
+                "EQUIPMENT_ID": 1,
+                "HygrothermographAddress": "192.168.1.90",
+                "HygrothermographName": "NSG-T/H42",
+                "HygrothermographPort": 4001,
+                "HygrothermographType": "RJ45",
+                "StatusStr": "6#干燥间"
+            }, "*");
+            //04-window捕捉到hautoproductoperateok消息
+            parent.window.addEventListener("message", function (e) {
+                if (e.data.message == 'hautoproductoperateok') {
+                    console.log(e.data.response.rtnmsg);
+                }
+                
+            }, false);
+            window.addEventListener("message", function (e) {
+                console.log(e);
+            });
+
+        }
+        $(function () {
+
+          
+
+            //$.ajax({
+            //    "url": "/api/HautosProductService/GetHautoDeviceList",
+            //    "type": "POST",
+            //    "dataType":"json",
+            //    "data": {"deviceSerialNumber":"HS500BS713",page:1,pageSize:10},
+            //    "success": function (response) {
+            //        console.log(response);
+
+            //    }
+            //});
+             
+
+        });
+
+        /**/</script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>设备列表</h1>      
+        <table class="table table-hover" id="deviceGrid">
+            <tr>
+                <td>设备ID</td>
+                <td>设备编号</td>
+                <td>设备IP</td>
+                <td>设备端口号</td>
+                <td>操作</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>HS500BS713</td>
+                <td>192.168.1.90</td>
+                <td>4001</td>
+                <td><input type="button" class="btn btn-outline-primary" value="打开监控页面" onclick="openHautoProducts()" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

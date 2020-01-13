@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wonderful.WebApi.ScaleService</name>
+    </assembly>
+    <members>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScalePageServiceController.DisplayScalePage">
+            <summary>
+            请求称重任务页面
+            </summary>
+            <returns>显示称重任务页面</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScalePageServiceController.PostScalePage(Wonderful.WebApi.ScaleService.Models.ScalePageRequest)">
+            <summary>
+            请求称重页面
+            </summary>
+            <param name="scalePageRequest">称重页面请求</param>
+            <returns>称重页面</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.#ctor(Wonderful.WebApi.ScaleService.Models.TodoContext)">
+            <summary>
+            构造函数，默认增加一条初始化任务
+            </summary>
+            <param name="context">代办列表上下文</param>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.PostScale(Wonderful.WebApi.ScaleService.Models.ScaleRequest)">
+            <summary>
+            请求称重
+            POST: api/ScaleService/PostScale
+            </summary>
+            <param name="scaleRequest">请求称重请求</param>
+            <returns>请求称重结果</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.PostScaleSaveTask(Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest)">
+            <summary>
+            保存称重任务
+            POST: api/ScaleService/PostScaleSaveTask
+            </summary>
+            <param name="scaleSaveTask">请求，保存除ScaleValues外所有信息</param>
+            <returns>响应</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.PostScaleSaveValue(Wonderful.WebApi.ScaleService.Models.ScaleSaveValueRequest)">
+            <summary>
+            请求保存当前重量
+            POST: api/ScaleService/PostScaleSaveValue
+            </summary>
+            <param name="scaleSaveValues">请求保存当前重量请求</param>
+            <returns>请求保存当前重量结果</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.PostTodoItems">
+            <summary>
+            获得代办列表
+            POST: api/ScaleService/TodoItems
+            </summary>
+            <returns>待办列表</returns>
+        </member>
+        <member name="M:Wonderful.WebApi.ScaleService.Controllers.ScaleServiceController.PostTodoItem(Wonderful.WebApi.ScaleService.Models.TodoItemRequest)">
+            <summary>
+            获得代办列表某一具体项
+            POST: api/ScaleService/TodoItem
+            </summary>
+            <param name="request">请求，包括TaskId</param>
+            <returns>响应</returns>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScalePageRequest">
+            <summary>
+            请求称重页面
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.TaskId">
+            <summary>
+            称重任务Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleName">
+            <summary>
+            称重任务电子称名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleType">
+            <summary>
+            称重方式，包括手工(manual)，自动(auto)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleParams">
+            <summary>
+            电子秤参数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleCount">
+            <summary>
+            称重次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleFrequency">
+            <summary>
+            称重频率，单位秒
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScalePageRequest.ScaleValues">
+            <summary>
+            称量值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleParams">
+            <summary>
+            电子秤参数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParams.ScaleParamId">
+            <summary>
+            电子秤参数id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParams.ScaleName">
+            <summary>
+            电子秤名，外键
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParams.ScalePort">
+            <summary>
+            电子秤端口
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParams.ScaleBitrate">
+            <summary>
+            电子秤比特率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParams.todoItem">
+            <summary>
+            代办项
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest">
+            <summary>
+            称参数，用于请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest.ScaleParamId">
+            <summary>
+            电子秤参数id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest.ScaleName">
+            <summary>
+            电子秤名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest.ScalePort">
+            <summary>
+            电子秤端口
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsRequest.ScaleBitrate">
+            <summary>
+            电子秤比特率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsResponse.ScaleParamId">
+            <summary>
+            电子秤参数id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsResponse.ScaleName">
+            <summary>
+            电子秤名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsResponse.ScalePort">
+            <summary>
+            电子秤端口
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsResponse.ScaleBitrate">
+            <summary>
+            电子秤比特率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleParamsResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleRequest">
+            <summary>
+            请求称重
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleRequest.TokenId">
+            <summary>
+            请求称重的用户Id
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleResponse">
+            <summary>
+            请求称重结果
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleResponse.TokenId">
+            <summary>
+            请求称重用户的TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleResponse.Result">
+            <summary>
+            请求称重的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleResponse.Msg">
+            <summary>
+            请求称重的结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleResponse.TaskId">
+            <summary>
+            称重任务Id
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest">
+            <summary>
+            保存称重任务请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.ScaleType">
+            <summary>
+            称重任务类型，分自动-auto，手动-manual
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.ScaleName">
+            <summary>
+            电子秤名
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.ScaleCount">
+            <summary>
+            称重次数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.ScaleFrequency">
+            <summary>
+            称重频率
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskRequest.ScaleParams">
+            <summary>
+            称参数，包括端口、波特率等
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskResponse">
+            <summary>
+            保存称重任务响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskResponse.Msg">
+            <summary>
+            保存称重任务结果消息，成功显示空字符串，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveTaskResponse.Result">
+            <summary>
+            保存称重任务的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueRequest">
+            <summary>
+            请求保存当前重量
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueRequest.ScaleValue">
+            <summary>
+            称量值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueResponse">
+            <summary>
+            请求保存当前重量结果
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueResponse.TaskId">
+            <summary>
+            称重TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueResponse.Msg">
+            <summary>
+            请求称重的结果消息，成功显示"Success to save value"，失败显示原因
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleSaveValueResponse.Result">
+            <summary>
+            请求称重的结果，True表示成功，False表示失败
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleValue">
+            <summary>
+            称重值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.ScaleValueId">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValue.TodoItem">
+            <summary>
+            TodoItem
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest">
+            <summary>
+            称重值请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest.ScaleValueId">
+            <summary>
+            称重值Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse">
+            <summary>
+            称重值响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse.ScaleValueId">
+            <summary>
+            称重值Id
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse.DateTime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.ScaleValueResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.TodoContext">
+            <summary>
+            待处理项目上下文
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.TodoItem">
+            <summary>
+            待处理项目
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.TokenId">
+            <summary>
+            TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleType">
+            <summary>
+            称重类型，分manual(手工)、auto(自动)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleName">
+            <summary>
+            称名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleCount">
+            <summary>
+            称多少次
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleFrequency">
+            <summary>
+            称频率，当ScantType=auto时有效
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.IsComplete">
+            <summary>
+            是否完成，True-完成，False-未完成
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleParams">
+            <summary>
+            称重参数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItem.ScaleValues">
+            <summary>
+            称重值
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.TodoItemRequest">
+            <summary>
+            待办请求
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemRequest.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="T:Wonderful.WebApi.ScaleService.Models.TodoItemResponse">
+            <summary>
+            待办请求响应
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.TokenId">
+            <summary>
+            TokenId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.TaskId">
+            <summary>
+            TaskId
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleType">
+            <summary>
+            称重类型，分manual(手工)、auto(自动)
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleName">
+            <summary>
+            称名字
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleCount">
+            <summary>
+            称多少次
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleFrequency">
+            <summary>
+            称频率，当ScantType=auto时有效
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.IsComplete">
+            <summary>
+            是否完成，True-完成，False-未完成
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleParams">
+            <summary>
+            称重参数
+            </summary>
+        </member>
+        <member name="P:Wonderful.WebApi.ScaleService.Models.TodoItemResponse.ScaleValues">
+            <summary>
+            称重值
+            </summary>
+        </member>
+    </members>
+</doc>

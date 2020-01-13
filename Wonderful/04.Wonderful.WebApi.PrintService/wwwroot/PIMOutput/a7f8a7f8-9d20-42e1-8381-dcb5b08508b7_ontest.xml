@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLScript Version="2.0">
+	<Command Name="a7f8a7f8-9d20-42e1-8381-dcb5b08508b7">
+		<Print>
+			<Format>
+				D:\workspace\Project_Code\Wonderful\Wonderful\04.Wonderful.WebApi.PrintService\wwwroot\PIMTemplate\ontest.btw
+			</Format>
+			<PrintSetup>
+				<Printer>HPC Floor1 Zebra</Printer>
+			</PrintSetup>
+			<NamedSubString Name="Reason">
+				<Value>瑕疵原因</Value>
+			</NamedSubString>
+			<NamedSubString Name="Name">
+				<Value>材料名称</Value>
+			</NamedSubString>
+			<NamedSubString Name="ItemNo">
+				<Value>材料编号</Value>
+			</NamedSubString>
+			<NamedSubString Name="Qty">
+				<Value>1</Value>
+			</NamedSubString>
+			<NamedSubString Name="Wo">
+				<Value>123456</Value>
+			</NamedSubString>
+			<NamedSubString Name="Uom">
+				<Value>kg</Value>
+			</NamedSubString>
+			<NamedSubString Name="LotNum">
+				<Value>123456</Value>
+			</NamedSubString>
+			<NamedSubString Name="RecordBy">
+				<Value>记录人</Value>
+			</NamedSubString>
+			<NamedSubString Name="RecordDate">
+				<Value>2019-10-10</Value>
+			</NamedSubString>
+		</Print>
+		<ExportPrintPreviewToImage ReturnImageInResponse="false">
+			<Format>
+				D:\workspace\Project_Code\Wonderful\Wonderful\04.Wonderful.WebApi.PrintService\wwwroot\PIMTemplate\ontest.btw
+			</Format>
+			<Folder>
+				D:\workspace\Project_Code\Wonderful\Wonderful\04.Wonderful.WebApi.PrintService\wwwroot\PIMOutput\
+			</Folder>
+			<FileNameTemplate>
+				a7f8a7f8-9d20-42e1-8381-dcb5b08508b7_Preview_Label_%PageNumber%.jpg
+			</FileNameTemplate>
+			<ImageFormatType>JPG</ImageFormatType>
+			<Colors>btColors24Bit</Colors>
+			<DPI>300</DPI>
+			<Overwrite>true</Overwrite>
+			<IncludeMargins>true</IncludeMargins>
+			<IncludeBorder>true</IncludeBorder>
+			<BackgroundColor>16777215</BackgroundColor>
+		</ExportPrintPreviewToImage>
+	</Command>
+</XMLScript>

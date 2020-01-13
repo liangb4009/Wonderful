@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>Wonderful.WebApi.ScaleService</RootNamespace>
+    <AssemblyName>Wonderful.WebApi.ScaleService</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\workspace\Project_Code\Wonderful\Wonderful\05.Wonderful.WebApi.ScaleService\Wonderful.WebApi.ScaleService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>E:\jenkins_home\jobs\PIMNext_WebApi.ScaleService_Dev\workspace\Wonderful\05.Wonderful.WebApi.ScaleService\Wonderful.WebApi.ScaleService.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="Wonderful.WebApi.ScaleService.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

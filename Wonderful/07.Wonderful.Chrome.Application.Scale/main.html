@@ -1,0 +1,85 @@
+<html style="overflow:scroll;">
+<head>
+    <title>Web Scale</title>
+</head>
+<body>
+    <div id="title_bar">
+        <a id="close" href="#"><img src="/images/close.ico" style="margin-top:5px;" /></a>
+        <a id="maximize" href="#"><img src="/images/maximize.ico" style="margin-top:5px;" /></a>
+        <a id="minimize" href="#"><img src="/images/minus.ico" style="margin-top:5px;" /></a>
+    </div>
+
+    <div class="operation">
+        <a class="opensp border highlight">打开端口</a>
+        <a class="closesp border normal">关闭端口</a>
+        <a class="showspace"></a>
+      
+    </div>
+
+    <div class="ports">
+        <span class="splst">可选端口</span>
+        <select class="splsts">
+            <option value="COM0">选择端口</option>
+        </select>
+        <a class="spstatus showred"></a>
+    </div>
+
+    <div class="baseinfo">
+        <!--<a class="taskidprompt font">TaskId:</a>
+    <a class="taskidvalue"></a><br>-->
+
+        <table>
+            <tr>
+                <td class="scaletypeprompt font">称重类型:</td>
+                <td class="scaletypevalue font"></td>
+                <td class="scalename font">电子秤名字:</td>
+                <td class="scalenameevalue font"></td>
+            </tr>
+            <tr>
+                <td class="scalefrequencyeprompt font">称重频率:</td>
+                <td class="scalefrequencyvalue font"></td>
+                <td class="scalecountprompt font">称重次数:</td>
+                <td class="scalecountvalue font"></td>
+            </tr>
+            <tr id="modulescaledemo" style="display:none;">
+                <td class="taskidprompt font">TaskId:</td>
+                <td class="taskidvalue"></td>
+            </tr>
+            <tr id="modulesoap" style="display:none;">
+                <td class="scalecountprompt font">AMC:</td>
+                <td class="scaleamcvalue font"></td>
+                <td class="scalecountprompt font">柜号:</td>
+                <td class="scalecupboardnovalue font"></td>
+            </tr>
+
+        </table>
+      
+    </div>
+    <div class="weights font">
+        <a class="weightprompt">重量:</a>
+        <a class="showspace"></a>
+        <span></span>
+    </div>
+    <div class="scan">
+        <a class="scanbarcode">扫描条码</a>
+        <input class="txtscanbarcode" type="text">
+    </div>
+    <div class="scanresults">
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>Id</th>
+                    <th>条码</th>
+                    <th>重量</th>
+                    <th>更新结果</th>                   
+                </tr>
+            </thead>
+            <tbody class="scaleresultsrows"></tbody>
+        </table>
+    </div>
+    <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="scripts/PageJs/WebScaleNew.js" type="text/javascript"></script>
+    <link href="css/PageCss/WebScaleNew.css" type="text/css" rel="Stylesheet" />
+</body>
+</html>

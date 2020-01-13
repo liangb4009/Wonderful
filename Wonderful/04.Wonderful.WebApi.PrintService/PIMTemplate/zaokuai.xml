@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<XMLScript Version="2.0">
+	<Command Name="3E225A2C-44BF-4502-97E1-3393E1C6472A">
+		<Print>
+			<Format>
+				D:\workspace\Project_Code\Wonderful\Wonderful\04.Wonderful.WebApi.PrintService\PIMTemplate\zaokuai.btw
+			</Format>
+			<NamedSubString Name="No1">
+				<Value>1</Value>
+			</NamedSubString>
+			<NamedSubString Name="No2">
+				<Value>2</Value>
+			</NamedSubString>
+			<NamedSubString Name="No3">
+				<Value>3</Value>
+			</NamedSubString>
+			<NamedSubString Name="No4">
+				<Value>4</Value>
+			</NamedSubString>
+			<NamedSubString Name="No5">
+				<Value>5</Value>
+			</NamedSubString>
+			<NamedSubString Name="No6">
+				<Value>6</Value>
+			</NamedSubString>
+		</Print>
+	</Command>
+</XMLScript>

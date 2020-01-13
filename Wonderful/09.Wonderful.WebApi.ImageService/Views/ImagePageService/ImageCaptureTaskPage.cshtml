@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImageCaptureTaskPage</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h1>To-do Image Capture</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="capture()">
+        RunMode:
+        <input type="radio" name="runmode" value="takephoto" checked="checked" >take photo
+        <input type="radio" name="runmode" value="scanqrcode">scan qrcode<br />
+        CameraType:
+        <input type="radio" name="cameratype" value="front camera" checked="checked">front camera
+        <input type="radio" name="cameratype" value="back camera">back camera<br>
+        MachineName:
+        <input type="radio" name="machinename" value="CNWSGZISDL917" checked="checked">Marick's PC<br>
+        CaptureCount:
+        <input type="text" name="capturecount" value="1" placeholder="1" required /><br>
+        CaptureFrequency:
+        <input type="text" name="capturefrequency" value="2" placeholder="2 seconds" required /><br>
+        <input type="submit" value="capture">
+    </form>
+    <p id="counter"></p>
+    <div class="row">
+        <div class="col-sm-8">
+            <table class="float-sm-left">
+                <tr>
+                    <th>Is Complete</th>
+                    <th>TaskId</th>
+                    <th>RunMode</th>
+                    <th>CameraType</th>
+                    <th>MachineName</th>
+                    <th>CaptureCount</th>
+                    <th>CaptureFrequency</th>
+                </tr>
+                <tbody id="todos"></tbody>
+            </table>
+        </div>
+        <div class="col-sm-4">
+            <table class="float-sm-left">
+                <tr>
+                    <th>Capture Images</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div id="iframewrapper">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

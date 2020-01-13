@@ -1,0 +1,99 @@
+﻿@using Wonderful.WebApi.ImageService.Models;
+@{
+    Layout = null;
+    var imageCaptureSaveUrl = ViewData["ImageCaptureSaveUrl"].ToString();
+    var imageCapturePageRequest = ViewData["ImageCapturePageRequest"] as ImageCapturePageRequest;
+    var imageValues = Json.Serialize(imageCapturePageRequest.ImageValues);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImageCapturePage</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function chrome_capture() {
+            var imageValues = @imageValues;
+            @*var TodoItemRequest = {
+                "TaskId": "@imageCapturePageRequest.TaskId"
+            };
+            $.ajax({
+                async: false,
+                type: "POST",
+                accepts: "application/json",
+                contentType: "application/json",
+                url: "api/ImageService/TodoItem",
+                data: JSON.stringify(TodoItemRequest),
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("TodoItem Fail!");
+                },
+                success: function (result) {
+                    console.log(result);
+                    imageValues = result.imageValues;
+                }
+            });*@
+            console.log(imageValues);
+            //01-windows发送消息showwebcam
+            parent.window.postMessage({
+                "message": "showwebcam",
+                "taskid" : "@imageCapturePageRequest.TaskId",
+                "runmode": "@imageCapturePageRequest.RunMode",
+                "filename": "@string.Format("{0}.jpg",imageCapturePageRequest.TaskId)",
+                "cameratype": "@imageCapturePageRequest.CameraType",
+                "machinename": "@imageCapturePageRequest.MachineName",
+                "capturecount": "@imageCapturePageRequest.CaptureCount",
+                "capturefrequency": "@imageCapturePageRequest.CaptureFrequency",
+                "imagevalues": imageValues,
+                "language": "en-US",
+                "saveurl": "@imageCaptureSaveUrl"
+            }, '*');
+            //10-windows捕捉到webcamtakephotook消息，或者webcamscanqrcodeok消息并打印
+            parent.window.addEventListener("message", function (e) {
+                if (e.data.message == 'webcamtakephotook') {
+                    console.log(e);
+                    parent.window.location.reload();
+                }
+                if (e.data.message == 'webcamscanqrcodeok') {
+                    console.log(e);
+                    parent.window.location.reload();
+                }
+            }, false);
+        }
+    </script>
+</head>
+<body>
+    @{
+        if (imageCapturePageRequest.TaskId == "00000000-0000-0000-0000-000000000001")
+        {
+            <h1>Select Camera Parameters</h1>
+            <h2>请选择摄像头相关参数</h2>
+            <p id="pTaskId">TaskId:@imageCapturePageRequest.TaskId</p>
+            <p id="pRunMode">RunMode:takephoto(拍照) or scanqrcode(扫描条码)</p>
+            <p id="pCameraType">CameraType:Font Camera(前置摄像头)or Back Camera(后置摄像头)</p>
+            <p id="pMachineName">MachineName:Marick's PC</p>
+            <p id="pCaptureCount">CaptureCount:CaptureCount(拍照次数)</p>
+            <p id="pCaptureFrequency">CaptureFrequency:CaptrueFrequency(拍照频率)</p>
+        }
+        else
+        {
+            <h1>Display Camera Parameters(显示摄像头相关参数)</h1>
+            <p id="pTaskId">TaskId:@imageCapturePageRequest.TaskId</p>
+            <p id="pRunMode">RunMode:@imageCapturePageRequest.RunMode</p>
+            <p id="pCameraType">CameraType:@imageCapturePageRequest.CameraType</p>
+            <p id="pMachineName">MachineName:@imageCapturePageRequest.MachineName</p>
+            <p id="pCaptureCount">CaptureCount:@imageCapturePageRequest.CaptureCount</p>
+            <p id="pCaptureFrequency">CaptureFrequency:@imageCapturePageRequest.CaptureFrequency</p>
+            if (imageCapturePageRequest.RunMode == "scanqrcode")
+            {
+                var qrCode = imageCapturePageRequest.ImageValues.Count() > 0 ? imageCapturePageRequest.ImageValues.First().Value : "";
+                <p id="pQRCode">QRCode:@qrCode</p>
+            }
+            <input name="btn_Capture" type="button" value="Capture" onclick="chrome_capture();" /><br />
+        }
+    }
+</body>
+</html>

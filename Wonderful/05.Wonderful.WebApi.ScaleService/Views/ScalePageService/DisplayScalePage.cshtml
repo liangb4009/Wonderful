@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayScalePage</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <h1>To-do Scale</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="scale()">
+        ScaleType:
+        <input type="radio" name="scaletype" value="manual" checked="checked">manual
+        <input type="radio" name="scaletype" value="auto">auto<br>
+        ScaleName:
+        <input type="radio" name="scalename" value="HPC Barsoap Scale" checked="checked">HPC Barsoap Scale
+        <input type="radio" name="scalename" value="NUT SG Scale">NUT SG Scale<br>
+        ScaleParams:
+        <div id="scaleparams">
+            Port:<input type="text" name="scaleport" value="COM1" placeholder="COM1" required /><br>
+        </div>
+        ScaleCount:
+        <input type="text" name="scalecount" value="1" placeholder="1" required /><br>
+        ScaleFrequency:
+        <input type="text" name="scalefrequency" value="1" placeholder="1 seconds" required /><br>
+        <input type="submit" value="Scale">
+    </form>
+    <p id="counter"></p>
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="float:left">
+                <tr>
+                    <th>Is Complete</th>
+                    <th>TaskId</th>
+                    <th>ScaleType</th>
+                    <th>ScaleName</th>
+                    <th>ScalePort</th>
+                    <th>ScaleCount</th>
+                    <th>ScaleFrequency</th>
+                </tr>
+                <tbody id="todos"></tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <table>
+                <tr>
+                    <th>Interface</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div id="iframewrapper">
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
+

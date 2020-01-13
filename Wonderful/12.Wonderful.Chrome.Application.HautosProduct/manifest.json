@@ -1,0 +1,27 @@
+{
+  "app": {
+    "background": {
+      "scripts": [ "background.js" ]
+    }
+  },
+  "manifest_version": 2,
+  "name": "Web Thermo-Hygrometer Application",
+  "version": "1.0",
+  "description": "Web Thermo-Hygrometer Application",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [   
+    "serial",
+    "storage",
+    "https://*/"
+  ],
+  "sockets": {
+    "tcp": {
+      "connect": [ "192.168.1.90:4001" ]
+    }
+  }
+
+}

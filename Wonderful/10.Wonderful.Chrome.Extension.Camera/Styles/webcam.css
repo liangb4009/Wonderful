@@ -1,0 +1,23 @@
+﻿#video {display: block;margin:1em auto;width:660px;height:490px;}
+
+.btn {
+    vertical-align: middle;
+    width: 120px;
+}
+
+.btn input[type=button] {
+    width: 100%;
+    height: 35px;
+}
+
+#divTakeImages, #divImages {
+    white-space: nowrap;
+    width: 100%;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
+li {
+    display: inline-block;
+    margin-left: 15px;
+}

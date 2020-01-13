@@ -1,0 +1,103 @@
+﻿@using Wonderful.WebApi.ScaleService.Models;
+@{
+    Layout = null;
+    var scalepagerequest = ViewData["ScalePageRequest"] as ScalePageRequest;
+    var scaleparams = Json.Serialize(scalepagerequest.ScaleParams);
+    var scalevalues = Json.Serialize(scalepagerequest.ScaleValues);
+    var saveUrl = ViewData["ScaleSaveUrl"];
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ScalePage</title>
+    <script type="text/javascript">
+        function chrome_scale() {
+            //01-window发送消息showwebscale
+            parent.window.postMessage({
+                "message": "webscaleoperate",
+                "appname": "Web Scale Application",
+                "extentionname": "Web Scale Extension",
+                "module": "scaledemo",//app启动模块来源
+                "moduletype":"test",//app启动模块分类
+                "taskid": "@scalepagerequest.TaskId",
+                "scaletype": "@scalepagerequest.ScaleType",
+                "scalename": "@scalepagerequest.ScaleName",
+                "scalefrequency": @scalepagerequest.ScaleFrequency,
+                "scalecount": @scalepagerequest.ScaleCount,
+                "scaleparams": @scaleparams,
+                "scalevalues": @scalevalues,
+                "scalesaveurl":'@saveUrl'
+            },
+                '*');
+            //04-window捕捉到webscaleoperateok消息
+            parent.window.addEventListener("message", function (e) {
+                if (e.data.message == 'webscaleoperateok') {
+                    console.log(e.data.response.rtnmsg);
+                
+                }
+                else if (e.data.message == 'scalescan_complete') {
+                    console.log(e.data.response);
+                      parent.window.location.reload();
+                }
+            }, false);
+           
+           parent.window.addEventListener("message", function (e) {
+
+                this.console.log(e);
+            });
+
+        }
+    </script>
+</head>
+<body>
+    @{
+        if (scalepagerequest.TaskId == "00000000-0000-0000-0000-000000000001" && scalepagerequest.ScaleValues is null)
+        {
+            <h1>Please Select Scale Parameters(请选择电子秤相关参数)</h1>
+            <p id="pScanType">ScanType:Manual(手工称量)or auto(自动称量)</p>
+            <p id="pScanName">ScanName:HPC Barsoap Scale(HPC香皂线电子秤)</p>
+            <p id="pScanParams">ScaleParams:Port(端口号)</p>
+            <p id="pScanCount">ScaleCount:ScaleCount(称重次数)</p>
+            <p id="pScanFrequency">ScaleFrequency:ScaleFrequency(称重频率，单位seconds)</p>
+        }
+        else
+        {
+            <h1>Display Scale Parameters(显示电子秤相关参数)</h1>
+            <p id="pTaskId">TaskId:@scalepagerequest.TaskId</p>
+            <p id="pScanType">ScanType:@scalepagerequest.ScaleType</p>
+            <p id="pScanName">ScanName:@scalepagerequest.ScaleName</p>
+            <p id="pScanParams">ScaleParams:@scalepagerequest.ScaleParams.ScalePort</p>
+            <p id="pScanFrequency">ScaleFrequency:@scalepagerequest.ScaleFrequency</p>
+            <p id="pScanCount">ScaleCount:@scalepagerequest.ScaleCount</p>
+            <input name="btn_Scale" type="button" value="Scale" onclick="chrome_scale();" /><br>
+            int scaleValueCount = scalepagerequest.ScaleValues.Count();
+            int scaleCount = scalepagerequest.ScaleCount;
+            if (scaleValueCount <= scaleCount)
+            {
+                //如果ScaleValue少于等于ScaleCount
+                //根据ScaleValue先生成input
+                for (int i = 1; i <= scaleValueCount; i++)
+                {
+                    <input name="txt_@i" type="text" value="@scalepagerequest.ScaleValues.ToList()[i - 1].Value" placeholder="input scale value"><br>
+                }
+                //然后根据ScaleCount生成剩余空白input
+                for (int i = scaleValueCount + 1; i <= scaleCount; i++)
+                {
+                    <input name="txt_@i" type="text" value="" placeholder="input scale value"><br>
+                }
+            }
+            else
+            {
+                //如果ScaleValue多于ScaleCount
+                //只生成ScaleCount个，其余不显示
+                for (int i = 1; i <= scaleCount; i++)
+                {
+                    <input name="txt_@i" type="text" value="@scalepagerequest.ScaleValues.ToList()[i - 1].Value" placeholder="input scale value"><br>
+                }
+            }
+        }
+    }
+</body>
+</html>
