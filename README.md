@@ -58,7 +58,7 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
 如果“11.Wonderful.Chrome.Extension.HautosProduct”安装成功，会出现名字为“Web Thermo-Hygrometer Extension”的谷歌扩展，目前版本号是“1.1”
         - 2.3.5 点击“加载已解压的扩展程序”，选择名字为“12.Wonderful.Chrome.Application.HautosProduct”的项目所在程序路径，点击“选择文件夹”
 如果“12.Wonderful.Chrome.Application.HautosProduct”安装成功，会出现名字为“Web Thermo-Hygrometer Application”的谷歌应用，目前版本号是“1.0”
-安装完成后的结果，参考图片《01-安装Chrome扩展和应用》
+安装完成后的结果，参考图片《01-安装Chrome扩展和应用》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBNxZlF5yLSK71NU2SHma9M3RPbPIchibsNxryD46XE4DV9aqicczKfJNA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 - 3 安装数据库和运行数据库脚本
     - 3.1 安装数据库
 我使用的是SQLServer2012数据库
@@ -67,7 +67,7 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
     - 3.2 运行数据库脚本
 下载地址：https://github.com/liangb4009/Wonderful/tree/master/publish
 名字为：“SQLServer_DataStructure.sql”的数据库脚本
-安装完成后的结果，参考图片《02-安装数据库和运行脚本》
+安装完成后的结果，参考图片《02-安装数据库和运行脚本》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBVYG89elQHM3V07se3x6gJGRuKhIEQpiaGJzgKIC6BTvL3HwtAEAqaNg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 - 4 调试和启动Web服务
     - 4.1 点击名字为“04.Wonderful.WebApi.PrintService”的项目，右键菜单，选择“启动新实例”
 如果启动成功，会自动打开打印服务的测试页面，你可以修改URL地址，进入API说明页面。
@@ -85,62 +85,62 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
 如果启动成功，会自动打开华图温湿度计服务的测试页面，你也可以修改URL地址，进入API说明页面
 注意：这个测试页面只能显示测试结果列表不能用作测试，测试方法参考“5 测试Web服务”
 启动Web服务结果，参考图片
-《03-启动打印服务》
-《04-启动称重服务》
-《05-启动拍照服务》
-《06-启动温湿度计服务》
+        - 《03-启动打印服务》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBYaIUH0UjxD0o46yYBKrmgYo0PuZuEBibibHXhziaEjWicc8d7tD3oicLeyA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+        - 《04-启动称重服务》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozB1CCt3lU3J9dlOTasyYJSLcKBpdOmGQkpKibtyJ8T9y7iaQ3gHqKF4ZOw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+        - 《05-启动拍照服务》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBuI1ViaCXzMhh5gJibLficFbt9MMJgf7KVuzPe4pjy5qMfibyicM5ofAbElQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+        - 《06-启动温湿度计服务》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBIGic08ZTsxiaF05ex5Oob7HicnEX8WUHTDTxP76C3VR1YPlwYJicY4Fy4g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 - 5 测试Web服务
     - 5.1 打开Web服务测试页面
-需要重新打开一个Chrome浏览器，输入下面地址完成测试
-打印测试网页：https://localhost:44351
-称重测试网页：https://localhost:44344
-拍照测试页面：https://localhost:44333
-温湿度计测试页面：https://localhost:44358
+        - 需要重新打开一个Chrome浏览器，输入下面地址完成测试
+        - 打印测试网页：https://localhost:44351
+        - 称重测试网页：https://localhost:44344
+        - 拍照测试页面：https://localhost:44333
+        - 温湿度计测试页面：https://localhost:44358
     - 5.2 打开API的说明页面
-打印: https://localhost:44351/swagger/index.html
-称重: https://localhost:44344/swagger/index.html
-拍照: https://localhost:44333/swagger/index.html
-温湿度计: https://localhost:44358/swagger/index.html
-Window定时任务: https://localhost:44332/swagger/index.html
-打开API页面结果，参考图片
-《07-打开打印API页面》
-《08-打开称重API页面》
-《09-打开拍照API页面》
-《10-打开温湿度计API页面》
-《11-打开Windows定时任务API页面》
+            - 打印: https://localhost:44351/swagger/index.html
+            - 称重: https://localhost:44344/swagger/index.html
+            - 拍照: https://localhost:44333/swagger/index.html
+            - 温湿度计: https://localhost:44358/swagger/index.html
+            - Window定时任务: https://localhost:44332/swagger/index.html
+        - 打开API页面结果，参考图片
+            - 《07-打开打印API页面》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBd1icaEaun5a0IuqkOnadcvZj6qF9TJQAklydGPFawWhcnBqjhaWZALw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+            - 《08-打开称重API页面》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBSk7n6tJoaP4c1vU2ptRlxkCiacUPF8eImf74YvHDibNowicn2VNTTvruw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+            - 《09-打开拍照API页面》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBCuoRMd9Sib51I2UvdLXA1yZibLuDQcibI0VyLjiaias8VaQLJ5lY0rvINfg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+            - 《10-打开温湿度计API页面》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBbCl3ZMHW2EVlI5pxrjOxYgbXWfoKyUHMdP6Yf7z9vOiab4bbMPwaVHg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+            - 《11-打开Windows定时任务API页面》![avatar](https://mmbiz.qpic.cn/mmbiz_jpg/KBfG6QqfwITVBb53XgAdb3hKeGuqnozBPkpN6ozcPBrRmUL9xMm8zh15G81K926NxBMrlLicDF0Cu3m6mVCCibQw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
     - 5.3 测试打印
-测试方法，可以参考《01-PIMNext Web Print》
-注意：测试打印需要安装Bartender
-安装Bartender方法，可以参考文章《01-安装Bartender》
+        - 测试方法，可以参考[《01-PIMNext Web Print》](https://mp.weixin.qq.com/s/IgRTRBTfYJvvzmHBS8GU9Q)
+        - 注意：测试打印需要安装Bartender
+        - 安装Bartender方法，可以参考文章《01-安装Bartender》
     - 5.4 测试称重
-测试方法，可以参考《02-PIMNext Web Scale》
-注意：测试称重需要安装梅特勒电子秤
-安装梅特勒电子秤，可以参考《02-网页读取梅特勒电子秤数据》
+        - 测试方法，可以参考[《02-PIMNext Web Scale》](https://mp.weixin.qq.com/s/KsOB33tCHApX4hfS4ek-Sg)
+        - 注意：测试称重需要安装梅特勒电子秤
+        - 安装梅特勒电子秤，可以参考[《02-网页读取梅特勒电子秤数据》](https://mp.weixin.qq.com/s/Br9LvZrPgfRQ0hA9sIqrBQ)
     - 5.5 测试拍照
-测试方法，可以参考《03-PIMNext Web Camera》
+        - 测试方法，可以参考[《03-PIMNext Web Camera》](https://mp.weixin.qq.com/s/0DxyigQiqK9lTGBsCTkNbQ)
     - 5.6 测试温湿度计
-测试方法，可以参考《04-PIMNext Web Thermo-Hygrometer》
-注意：测试温湿度计需要安装华图温湿度计，
-安装华图温湿度计，可以参考《03-华图温湿度计配置》
+        - 测试方法，可以参考[《04-PIMNext Web Thermo-Hygrometer》](https://mp.weixin.qq.com/s/eOXY6pbkb32osApg7jClUA)
+        - 注意：测试温湿度计需要安装华图温湿度计，
+        - 安装华图温湿度计，可以参考[《03-华图温湿度计配置》](https://mp.weixin.qq.com/s/vjcvutt3nxSVD1_a3IXwaQ)
     - 5.7 测试定时任务
-注意：测试定时任务需要安装定时任务执行程序，可以参考文章《04-安装定时任务执行程序》
-测试方法：
-        - 打开“https://localhost:44332/swagger/index.html”
-        - 选择名字为“/api/AmwaySchedule/UpdateSchedule 更新计划任务API”
-        - 输入下面参数：
-            > {
-            >   "scheduleId": "2ff9e139-e836-4c14-8098-16b80af94440",
-            >   "scheduleCode": "10012",
-            >   "systemCode": "PIM",
-            >   "descr": "定时统计干燥间负荷任务",
-            >   "startDate": "2019-03-25 14:56:04.000",
-            >   "endDate": "2023-03-31 14:55:09.000",
-            >   "period": "15",
-            >   "retryCount": "5",
-            >   "scheduleStatus": "1"
-            > }
-        - 点击“Execute”
-        - 返回200
+        - 注意：测试定时任务需要安装定时任务执行程序，可以参考文章《04-安装定时任务执行程序》
+        - 测试方法：
+            - 打开“https://localhost:44332/swagger/index.html”
+            - 选择名字为“/api/AmwaySchedule/UpdateSchedule 更新计划任务API”
+            - 输入下面参数：
+                > {
+                >   "scheduleId": "2ff9e139-e836-4c14-8098-16b80af94440",
+                >   "scheduleCode": "10012",
+                >   "systemCode": "PIM",
+                >   "descr": "定时统计干燥间负荷任务",
+                >   "startDate": "2019-03-25 14:56:04.000",
+                >   "endDate": "2023-03-31 14:55:09.000",
+                >   "period": "15",
+                >   "retryCount": "5",
+                >   "scheduleStatus": "1"
+                > }
+            - 点击“Execute”
+            - 返回200
 
 
 
