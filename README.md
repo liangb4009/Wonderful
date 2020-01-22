@@ -58,7 +58,7 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
 如果“11.Wonderful.Chrome.Extension.HautosProduct”安装成功，会出现名字为“Web Thermo-Hygrometer Extension”的谷歌扩展，目前版本号是“1.1”
         - 2.3.5 点击“加载已解压的扩展程序”，选择名字为“12.Wonderful.Chrome.Application.HautosProduct”的项目所在程序路径，点击“选择文件夹”
 如果“12.Wonderful.Chrome.Application.HautosProduct”安装成功，会出现名字为“Web Thermo-Hygrometer Application”的谷歌应用，目前版本号是“1.0”
-安装完成后的结果，参考图片《01-安装Chrome扩展和应用》![《01-安装Chrome扩展和应用》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/01-%E5%AE%89%E8%A3%85Chrome%E6%89%A9%E5%B1%95%E5%92%8C%E5%BA%94%E7%94%A8.jpg?raw=true)
+            - 安装完成后的结果，参考图片《01-安装Chrome扩展和应用》![《01-安装Chrome扩展和应用》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/01-%E5%AE%89%E8%A3%85Chrome%E6%89%A9%E5%B1%95%E5%92%8C%E5%BA%94%E7%94%A8.jpg?raw=true)
 - 3 安装数据库和运行数据库脚本
     - 3.1 安装数据库
 我使用的是SQLServer2012数据库
@@ -67,7 +67,7 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
     - 3.2 运行数据库脚本
 下载地址：https://github.com/liangb4009/Wonderful/tree/master/publish
 名字为：“SQLServer_DataStructure.sql”的数据库脚本
-安装完成后的结果，参考图片《02-安装数据库和运行脚本》![《02-安装数据库和运行脚本》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/02-%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC.jpg?raw=true)
+        - 安装完成后的结果，参考图片《02-安装数据库和运行脚本》![《02-安装数据库和运行脚本》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/02-%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC.jpg?raw=true)
 - 4 调试和启动Web服务
     - 4.1 点击名字为“04.Wonderful.WebApi.PrintService”的项目，右键菜单，选择“启动新实例”
 如果启动成功，会自动打开打印服务的测试页面，你可以修改URL地址，进入API说明页面。
@@ -84,7 +84,8 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
     - 4.5 点击名字为“13.Wonderful.WebApi.HautosProductService”的项目，右键菜单，选择“启动新实例”
 如果启动成功，会自动打开华图温湿度计服务的测试页面，你也可以修改URL地址，进入API说明页面
 注意：这个测试页面只能显示测试结果列表不能用作测试，测试方法参考“5 测试Web服务”
-启动Web服务结果，参考图片
+启动Web服务结果
+        - 参考图片
         - 《03-启动打印服务》![《03-启动打印服务》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/03-%E5%90%AF%E5%8A%A8%E6%89%93%E5%8D%B0%E6%9C%8D%E5%8A%A1.jpg?raw=true)
         - 《04-启动称重服务》![《04-启动称重服务》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/04-%E5%90%AF%E5%8A%A8%E7%A7%B0%E9%87%8D%E6%9C%8D%E5%8A%A1.jpg?raw=true)
         - 《05-启动拍照服务》![《05-启动拍照服务》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/05-%E5%90%AF%E5%8A%A8%E6%8B%8D%E7%85%A7%E6%9C%8D%E5%8A%A1.jpg?raw=true)
@@ -97,11 +98,11 @@ https://github.com/liangb4009/Wonderful/tree/master/relate_softwares
         - 拍照测试页面：https://localhost:44333
         - 温湿度计测试页面：https://localhost:44358
     - 5.2 打开API的说明页面
-            - 打印: https://localhost:44351/swagger/index.html
-            - 称重: https://localhost:44344/swagger/index.html
-            - 拍照: https://localhost:44333/swagger/index.html
-            - 温湿度计: https://localhost:44358/swagger/index.html
-            - Window定时任务: https://localhost:44332/swagger/index.html
+        - 打印: https://localhost:44351/swagger/index.html
+        - 称重: https://localhost:44344/swagger/index.html
+        - 拍照: https://localhost:44333/swagger/index.html
+        - 温湿度计: https://localhost:44358/swagger/index.html
+        - Window定时任务: https://localhost:44332/swagger/index.html
         - 打开API页面结果，参考图片
             - 《07-打开打印API页面》![《07-打开打印API页面》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/07-%E6%89%93%E5%BC%80%E6%89%93%E5%8D%B0API%E9%A1%B5%E9%9D%A2.jpg?raw=true)
             - 《08-打开称重API页面》![《08-打开称重API页面》](https://github.com/liangb4009/Wonderful/blob/master/doc/02-pictures/08-%E6%89%93%E5%BC%80%E7%A7%B0%E9%87%8DAPI%E9%A1%B5%E9%9D%A2.jpg?raw=true)
