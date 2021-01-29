@@ -18,7 +18,7 @@
   <ItemGroup>
     <PackageReference Include="ExcelReport" Version="3.1.6" />
     <PackageReference Include="ExcelReport.Driver.NPOI" Version="2.0.3" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="2.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
